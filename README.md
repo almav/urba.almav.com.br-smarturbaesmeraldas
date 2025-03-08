@@ -59,9 +59,10 @@ Este repositório contém exemplos e documentação para utilizar a API do Mapa 
 - Aviso de rolagem da página (exemplo03.html):
   - https://urba.almav.com.br/smarturbaesmeraldas/exemplo03.html
 
+![almav Mapa Interativo](https://raw.githubusercontent.com/almav/urba.almav.com.br-smarturbaesmeraldas/main/assets/images/screen02.jpg)
+
 ## Mapa em Perspectiva
 
-![almav Mapa Interativo](https://raw.githubusercontent.com/almav/urba.almav.com.br-smarturbaesmeraldas/main/assets/images/screen02.jpg)
 
 A nova versão do Mapa Interativo contém a funcionalidade do botão: perspectiva.
 
