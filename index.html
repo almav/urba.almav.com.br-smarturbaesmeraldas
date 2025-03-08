@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://urba.almav.com.br/smarturbaesmeraldas/index.html">
+    <meta property="og:title" content="Smart Urba Esmeraldas">
+    <meta property="og:site_name" content="Smart Urba Esmeraldas">
+    <meta property="og:description" content="Mapa Interativo do Loteamento">
+    <meta property="og:image" content="https://maps.app.almav.com/apiv2/assets/maps/data/aaf34aea-e749-4adf-a7a7-04dfd1f8899b/og-image-1280.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="1051">
+    <meta property="og:type" content="website">
+    <meta property="og:updated_time" content="2025-03-07T12:00:00+00:00">
+
+    <meta name="description" content="Mapa Interativo do Loteamento. Explore o Smart Urba Esmeraldas com detalhes incríveis.">
+    <meta name="keywords" content="Mapa Interativo, Loteamento, Smart Urba Esmeraldas, Almav">
+
+    <link rel="preconnect" href="https://maps.app.almav.com">
+
+    <link rel="apple-touch-icon" type="image/svg+xml" sizes="180x180"
+    href="https://maps.app.almav.com/apiv1/assets/ico/favicon-urba.svg">
+  <link rel="icon" type="image/svg+xml" sizes="32x32"
+    href="https://maps.app.almav.com/apiv1/assets/ico/favicon-urba.svg">
+  <link rel="icon" type="image/svg+xml" sizes="16x16"
+    href="https://maps.app.almav.com/apiv1/assets/ico/favicon-urba.svg">
+  <link rel="shortcut icon" type="image/svg+xml" sizes="16x16"
+    href="https://maps.app.almav.com/apiv1/assets/ico/favicon-urba.svg">
+
+    <meta name="apple-mobile-web-app-title" content="almav" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Smart Urba Esmeraldas">
+
+    <link rel="canonical" href="https://urba.almav.com.br/smarturbaesmeraldas/" />
+    <link rel='shortlink' href='https://urba.almav.com.br/smarturbaesmeraldas/' />
+
+    <meta name="theme-color" content="#ff9100">
+
+    <title>Smart Urba Esmeraldas</title>
+    <style>
+        body {
+            margin: 0; padding: 0; background-color: #333; overflow: auto;
+            padding-top: env(safe-area-inset-top);
+            padding-right: env(safe-area-inset-right);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+        }
+        html, body, #almavMap1 { height: 100%; }
+        #almavMap1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <!-- Importante -->
+    <!-- key: é a chave de API -->
+    <!-- callback: é o nome da função que será executada após o carregamento do mapa -->
+        <script src="https://maps.app.almav.com/apiv2/js/almav-initmap.min.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap" defer></script>
+</head>
+
+<body>
+    <!-- Esse é o elemento que receberá o mapa -->
+    <div id="almavMap1"></div>
+    <script>
+        /*
+            Inicializar o mapa
+            -------------------
+            * A função `initMap` será executada após o carregamento do mapa.
+            * O parâmetro da url `callback` é o nome da função que será 
+            executada após o carregamento do mapa. 
+            Por exemplo: `callback=initMap`.
+        */
+        // IMPORTANTE:
+        let almavMap1;
+        function initMap() {
+            // Criar o objeto do mapa
+            almavMap1 = new almav.maps.Map(document.getElementById('almavMap1'), {
+                fitBounds: true, // Ajustar o zoom para os limites dos elementos
+                bearing: 0, // Ângulo de rotação do mapa
+                maxPitch: 55, // Inclinação máxima do mapa
+                showZoom: true, // mostra botões de zoom in e zoom out
+                showCompass: false,
+                showCompassAlt: { show: true, position: 'top-right', order: -1, title: 'Mostrar direção do Norte' },
+                geolocate: { show: true, order: 99, message: 'permitir GPS', timeout: 15000 },
+                almavLogo: true,
+                almavAttribution: true,
+                layersReady: () => waitForMap(almavMap1), // Esperar o mapa ser carregado e chama a função para criar a extrusão
+            });
+        }
+
+        // Função para aguardar o carregamento do mapa
+        window.waitForMap = (mapInstance) => {
+            // Registra a instância do mapa para uso global
+            almavAppMap.registerMapInstance('almavMap1', mapInstance);
+            
+            // Inicializa os componentes do mapa
+            almavAppMap.addExtrusionToMap(mapInstance);
+            almavAppMap.addPoisButton(mapInstance);
+        }
+    </script>
+
+    <!-- Opcional: Impedir que smartphones desliguem a tela durante o uso -->
+    <!-- Autor: https://github.com/richtr/NoSleep.js.git -->
+    <script src="https://maps.app.almav.com/apiv2/assets/vendor/richtr/NoSleep.min.js"></script>
+    <script>var noSleep = new NoSleep(); noSleep.enable();</script>
+</body>
+</html>
