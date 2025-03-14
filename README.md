@@ -150,7 +150,7 @@ O Mapa Interativo já está preparado com as configurações referentes à chave
     <!-- key: é a chave de API -->
     <!-- callback: é o nome da função que será executada após o carregamento do mapa -->
     <script
-        src="https://maps.app.almav.com/apiv1/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap"
+        src="https://maps.app.almav.com/apiv2/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap"
         defer></script>
 ```
 
@@ -230,7 +230,7 @@ Para integrar o Mapa Interativo da Almav em um site WordPress, siga estas etapas
 
    <!-- Carregamento do Script do Mapa Almav -->
    <script 
-     src="https://maps.app.almav.com/apiv1/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap" 
+     src="https://maps.app.almav.com/apiv2/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap" 
      defer>
    </script>
    ```
@@ -317,7 +317,7 @@ Para integrar o Mapa Interativo da Almav usando o Elementor, siga estas etapas d
 
    <!-- Carregamento do Script do Mapa Almav -->
    <script 
-     src="https://maps.app.almav.com/apiv1/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap" 
+     src="https://maps.app.almav.com/apiv2/js/almav-initmap.js?key=aaf34aea-e749-4adf-a7a7-04dfd1f8899b&callback=initMap" 
      defer>
    </script>
    ```
